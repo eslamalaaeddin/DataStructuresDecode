@@ -1,13 +1,12 @@
 package LinkedList;
 
-import java.util.LinkedList;
 
 public abstract class MyList<T> {
-    protected Node<T> head;
-    protected Node<T> tail;
-    protected int length;
+    public Node<T> head;
+    public Node<T> tail;
+    public int length;
 
-    protected boolean isEmpty() {
+    public boolean isEmpty() {
         return head == null;
     }
 
@@ -17,6 +16,8 @@ public abstract class MyList<T> {
         return null;
     }
 
+    protected abstract void insertFirst(T data);
+
     protected abstract void insertLast(T data);
 
     protected abstract void insertAfter(T data, T newData);
@@ -24,6 +25,11 @@ public abstract class MyList<T> {
     protected abstract void insertBefore(T data, T newData);
 
     protected abstract void deleteNode(T data);
+
+    public void deleteHead(){
+        if (head == null) return;
+        deleteNode(head.data);
+    }
 
     protected abstract void printList();
 
@@ -40,7 +46,7 @@ public abstract class MyList<T> {
     protected MyList<T> copyLinkedList() {
         MyList<T> newList;
         //Bad Code I think, as if new list is added we will open the code and modify it (this violates Open Closed Principle)
-        if (this instanceof MyLinkedList<T>) newList = new MyLinkedList<T>();
+        if (this instanceof MyLinkedList) newList = new MyLinkedList<T>();
         else newList = new MyDoubleyLinkedList<T>();
 
         Iterator<T> iterator = initIterator();

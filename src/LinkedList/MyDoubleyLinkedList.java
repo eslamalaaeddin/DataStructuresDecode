@@ -2,6 +2,18 @@ package LinkedList;
 
 public class MyDoubleyLinkedList<T> extends MyList<T> {
     @Override
+    protected void insertFirst(T data) {
+        Node<T> node = new Node<>(data);
+        if (isEmpty()) head = node;
+        else {
+            head.previous = node;
+            node.next = head;
+        }
+        head = node;
+        length++;
+    }
+
+    @Override
     public void insertLast(T data) {
         Node<T> node = new Node<>(data);
         if (isEmpty()) head = node;
@@ -77,6 +89,7 @@ public class MyDoubleyLinkedList<T> extends MyList<T> {
         deletedNode = null;
         length--;
     }
+
 
     @Override
     public void printList() {

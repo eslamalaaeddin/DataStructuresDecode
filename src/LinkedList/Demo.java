@@ -4,7 +4,8 @@ import java.math.BigInteger;
 
 public class Demo {
     public static void main(String[] args) {
-        testDoubleyLinkedList();
+        testSinglyLinkedList();
+        //testDoubleyLinkedList();
 
     }
 
@@ -14,15 +15,12 @@ public class Demo {
         myLinkedList.insertLast(2);
         myLinkedList.insertLast(3);
         myLinkedList.insertLast(4);
-
         myLinkedList.printList();
 
         myLinkedList.insertAfter(3, 5);
-
         myLinkedList.printList();
 
         myLinkedList.insertBefore(3, 19);
-
         myLinkedList.printList();
 
         myLinkedList.deleteNode(1);
@@ -36,12 +34,18 @@ public class Demo {
 
         myLinkedList.deleteNode(2);
         myLinkedList.deleteNode(5);
-
         myLinkedList.printList();
 
         myLinkedList.deleteNode(19);
-
         myLinkedList.printList();
+
+//        myLinkedList.insertFirst(159);
+//        myLinkedList.printList();
+
+        myLinkedList.deleteHead();
+        myLinkedList.printList();
+
+
     }
 
     static void testDoubleyLinkedList(){

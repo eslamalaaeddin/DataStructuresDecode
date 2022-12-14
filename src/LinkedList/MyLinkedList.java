@@ -3,6 +3,15 @@ package LinkedList;
 public class MyLinkedList<T> extends MyList<T> {
 
     @Override
+    public void insertFirst(T data) {
+        Node<T> node = new Node<>(data);
+        if (isEmpty()) head = node;
+        else node.next = head;
+        head = node;
+        length++;
+    }
+
+    @Override
     public void insertLast(T data) {
         Node<T> node = new Node<>(data);
         if (isEmpty()) head = node;
@@ -44,6 +53,7 @@ public class MyLinkedList<T> extends MyList<T> {
 
     @Override
     public void deleteNode(T data) {
+
         Node<T> deletedNode = findNode(data);
         if (deletedNode == null) return;
 
@@ -69,8 +79,10 @@ public class MyLinkedList<T> extends MyList<T> {
         length--;
     }
 
+
     @Override
     public void printList() {
+        System.out.println("---------------------------");
         System.out.println("Head: " + head);
         System.out.println("Tail: " + tail);
         Iterator<T> iterator = initIterator();
