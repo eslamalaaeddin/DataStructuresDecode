@@ -31,6 +31,11 @@ public abstract class MyList<T> {
         deleteNode(head.data);
     }
 
+    public void deleteTail(){
+        if (tail == null) return;
+        deleteNode(tail.data);
+    }
+
     protected abstract void printList();
 
     protected Node<T> findNode(T data) {

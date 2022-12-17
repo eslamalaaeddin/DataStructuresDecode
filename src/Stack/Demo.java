@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class Demo {
     public static void main(String[] args) {
-        testStackBasedArray();
+        testStackBasedLinkedList();
+//        testStackBasedArray();
     }
 
 
@@ -49,13 +50,12 @@ public class Demo {
     static void testStackBasedLinkedList(){
         StackWithLinkedList<Integer> myStack = new StackWithLinkedList<>();
         System.out.println(myStack.isEmpty());
+
         myStack.push(1);
         myStack.push(2);
         myStack.push(5);
+        myStack.print();
 
-        while (!myStack.isEmpty()){
-            System.out.println(myStack.pop());
-        }
 
         System.out.println("Size: " + myStack.getSize());
         System.out.println(myStack.isEmpty());
@@ -63,6 +63,10 @@ public class Demo {
         myStack.print();
         myStack.pop();
         myStack.print();
+
+        while (myStack.isNotEmpty()){
+            System.out.println(myStack.pop());
+        }
 
     }
 }

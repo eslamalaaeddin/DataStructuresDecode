@@ -53,6 +53,11 @@ public class StackWithArray<T> extends SuperStack<T> {
         return top <= -1;
     }
 
+    @Override
+    boolean isNotEmpty() {
+        return !isEmpty();
+    }
+
     boolean isFull(){
         return top >= helperArray.length - 1;
     }
@@ -77,6 +82,6 @@ public class StackWithArray<T> extends SuperStack<T> {
     }
 
     void clear(){
-        while (!isEmpty()) pop();
+        while (isNotEmpty()) pop();
     }
 }

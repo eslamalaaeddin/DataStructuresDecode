@@ -34,6 +34,9 @@ public class StackWithLinkedList<T> extends SuperStack<T> {
     }
 
     @Override
+    boolean isNotEmpty() {return !isEmpty();}
+
+    @Override
     void print() {
         helperList.printList();
     }

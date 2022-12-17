@@ -5,7 +5,7 @@ public class MyLinkedList<T> extends MyList<T> {
     @Override
     public void insertFirst(T data) {
         Node<T> node = new Node<>(data);
-        if (isEmpty()) head = node;
+        if (isEmpty()) tail = node;//was head = node !
         else node.next = head;
         head = node;
         length++;

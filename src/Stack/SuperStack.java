@@ -8,6 +8,7 @@ public abstract class SuperStack<T> {
     abstract T peek();
 
     abstract boolean isEmpty();
+    abstract boolean isNotEmpty();
 
     abstract void print();
 
